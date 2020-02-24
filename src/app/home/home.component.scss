@@ -1,0 +1,140 @@
+.content {
+	background-image: linear-gradient(60deg, #19181A 0%, #353535 100%);
+    color: #e1e1e1;
+}
+
+.container {
+	padding: 15px 10px;
+}
+
+.experience {
+	background: url('/assets/img/laptop.png');
+}
+
+fa-icon.ng-fa-icon {
+    color: #b9376c;	
+	font-size: 28px;
+	margin: 0 5px;
+}
+
+.jumbotron{
+	background-color: #2f3b48;
+	background-image: url('/assets/img/background.jpg');
+	background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    padding: 10rem 5.5rem;
+}
+
+.title {
+	border-bottom: 1px solid #b9376c;
+	padding-bottom: 3px;
+}
+
+
+.wrapper {
+	height:100%;
+}
+
+
+#profile {
+	.container {
+		padding: 45px 10px;
+	}
+
+	div.text-center {
+		margin: 10px 0;
+	}
+
+	h1 {
+		margin-bottom: 15px;
+	}	
+}
+
+
+#projects {
+	a {
+		color: #ffffff;
+	}
+
+	.project-container{
+		background-color: #b9376c;
+		border-radius: 10px;
+		margin: 2px 10px;	
+		padding: 10px;
+	}
+
+	.project-container:hover{
+		background-color: #ffffff;
+		transition: 0.4s;
+
+		a{
+			color: #b9376c;
+			font-weight: bolder;
+			text-decoration: none;
+		}
+	}
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.container {
+		padding: 20px 10px !important;
+	}
+
+	#experience{
+		li {
+			font-size: 14px;
+		}
+	}	
+
+	#profile {
+		.jumbotron {
+			background-size: unset;
+			background-position: -210px -530px;
+
+			h3{
+				font-size: 18px
+			}
+		}
+	}
+
+
+	#skills, #projects {
+		div.col-4{
+		    font-size: 14px;
+	    	padding-right: 0;
+	    }
+	}
+
+
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
+	h1 {
+		font-size: 28px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	h4 {
+		font-size: 16px;
+	}
+	
+	.container {
+		padding: 20px 10px !important;
+	}
+
+	fa-icon.ng-fa-icon {
+    	font-size: 20px;
+	}
+
+	.jumbotron {
+		padding: 5rem 2rem 2rem 6rem;
+	}
+}

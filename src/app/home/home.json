@@ -1,0 +1,36 @@
+{ 
+   	"skills": {
+   		"development": ["HTML", "Ionic - Angular", "Bootstrap",  "Jquery",  "Javascript", "Vue js", "MySQL",  "PHP – Laravel",  "CSS3", "AS3",  "Wordpress"],
+   		"tools": ["Photoshop", "Gitlab", "Sourcetree", "Cordova", "Flash CS6", "Construct 2", "MS Word", "MS PowerPoint", "MS Excel" ]
+   	},
+   "experience": {
+      "0": {
+          "company": "Miyens Technologies / Oct 2016 - Present",
+          "position": "Web and App Developer",
+          "roles": ["Worked with a team of developers for an eLearning tool using Laravel, Vue js and Ionic.","Improved eLearning tool by adding new features and fixing bugs.","Build release and maintain versions of apps.","Create, design and maintain courses for the eLearning tool."]
+      },
+      "1": {
+          "company": "",
+          "position": "Quality Assurance",
+          "roles": ["Tested websites and eLearning applications to assure that all specifications are met.","Work closely with developers to address functionality and user experience on websites and eLearning platforms.","Create test plans and execute testing for enhancements and fixes on applications.","Document issues found and when the issues has been resolved."]
+      },
+      "2": {
+          "company": "",
+          "position": "Game Developer",
+          "roles": ["Promotional games - app and web version using Construct 2.","Augmented Reality Apps using Kinect."]
+      },
+      "3": {
+         "company": "Miyens Technologies / June 2016 - Sept 2016",
+         "position": "On Job Training - Wordpress maintenance and Developer",
+         "roles": ["Create landing pages using Wordpress.","Websites plugin maintenance."]
+      }
+   },
+     "projects": [
+     {"title": "Juander Authoring Tool Web", "link": "https://juander.net/login"},
+     {"title": "Juander Authoring Tool Mobile", "link": "https://play.google.com/store/apps/details?id=com.juander.app&hl=en"},
+     {"title": "Peoplecademy", "link": "https://play.google.com/store/apps/details?id=com.peoplecademy.app&hl=en"}, 
+     {"title": "Augmented Reality", "link": "https://www.miyens.com/portfolio-item/ar-qa/"},
+     {"title": "Mobile Game", "link": "https://play.google.com/store/apps/details?id=com.miyens.pacmanpunch&hl=en"},
+     {"title": "Game Web Version", "link": "https://www.miyens.com/game-catalog/pacman-punch/ "}
+     ]
+ }
