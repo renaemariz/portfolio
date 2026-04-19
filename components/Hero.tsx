@@ -1,0 +1,117 @@
+"use client";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+
+export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  const roles = [
+    "Renae Mariz Cariño",
+    "Frontend Architecture Specialist",
+    "Designing UI Systems",
+    "Building Scalable Web Apps",
+  ];
+
+  // Logic: Handles the text cycling
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [roles.length]);
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500">
+      {/* 1. BACKGROUND LAYER: Mesh Gradient */}
+      <div className="absolute -inset-[200px] z-0 animate-mesh pointer-events-none opacity-40 dark:opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#3b82f6_0%,transparent_40%),radial-gradient(circle_at_80%_20%,#a855f7_0%,transparent_40%),radial-gradient(circle_at_50%_80%,#22c55e_0%,transparent_40%)] blur-[80px]" />
+      </div>
+
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 pt-20">
+        {/* 2. LEFT CONTENT: Typography & CTA */}
+        <div className="space-y-8 text-center lg:text-left">
+          <div>
+            <p className="text-sm font-bold tracking-[0.2em] text-indigo-600 dark:text-blue-400 uppercase mb-4">
+              Available for new opportunities
+            </p>
+            <h1 className="text-6xl xl:text-8xl font-black tracking-tight text-slate-900 dark:text-white leading-[0.9]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                {roles[roleIndex]}
+              </span>
+            </h1>
+          </div>
+
+          <p className="text-lg text-secondary max-w-md mx-auto lg:mx-0 leading-relaxed">
+            I build scalable web applications using{" "}
+            <span className="text-main dark:text-zinc-100 font-semibold">
+              React & Angular
+            </span>
+            , turning complex business logic into intuitive user experiences.
+          </p>
+
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            <Link
+              href="#experience"
+              className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-xl"
+            >
+              View Experience{" "}
+            </Link>
+            <Link
+              href="#contact"
+              className="px-8 py-4 border-2 border-slate-300 dark:border-zinc-800 dark:text-white font-bold rounded-2xl hover:scale-105 transition-all"
+            >
+              Contact Me
+            </Link>
+          </div>
+        </div>
+
+        {/* 3. RIGHT CONTENT: The Glass Dashboard Hides on tablet to smaller screen*/}
+        <div className="hidden lg:block relative justify-self-center  lg:justify-self-end group ">
+          {/* Outer Glow */}
+          <div className="absolute -inset-10 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
+          <div className="relative w-[340px] md:w-[400px] bg-white/80 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl overflow-hidden transform transition-all duration-700 group-hover:-translate-y-2">
+            {/* Header / Traffic Lights */}
+            <div className="flex items-center justify-between px-8 py-5 border-b border-slate-100 dark:border-zinc-800">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-400/20 border border-red-400" />
+                <div className="w-3 h-3 rounded-full bg-amber-400/20 border border-amber-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400/20 border border-green-400" />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                System.Active
+              </span>
+            </div>
+
+            <div className="p-8 space-y-6">
+              {/* Dashboard Hero Block */}
+              <div className="h-28 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 p-4 flex flex-col justify-end">
+                <div className="h-1.5 w-12 bg-white/30 rounded-full mb-2" />
+                <div className="h-3 w-24 bg-white/60 rounded-full" />
+              </div>
+
+              {/* Animated Chart SVG */}
+              <div className="relative h-32 rounded-2xl bg-slate-950 dark:bg-slate-800 overflow-hidden group/chart">
+                <svg
+                  className="absolute inset-0 w-full h-full p-4"
+                  viewBox="0 0 300 100"
+                >
+                  <path
+                    className="fill-none stroke-blue-500 stroke-[3] [stroke-dasharray:400] [stroke-dashoffset:400] animate-draw"
+                    d="M0,80 C50,20 100,90 150,40 C200,10 250,80 300,30"
+                  />
+                </svg>
+              </div>
+
+              {/* Data Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="h-16 rounded-xl bg-slate-200 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700/30" />
+                <div className="h-16 rounded-xl bg-slate-200 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700/30" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

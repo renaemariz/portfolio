@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* You must define it here for Tailwind to generate the 'bg-card-bg' utility */
+  --color-card-bg: rgba(255, 255, 255, 0.4);
+  --color-card-border: rgba(255, 255, 255, 0.2);
+}
+@layer base {
+  :root {
+    /* Light Mode Variables */
+    --bg-primary: #f4f4f5;
+    --bg-secondary: #f4f4f5; /* zinc-100 */
+    --text-main: #18181b; /* zinc-900 */
+    --text-secondary: #52525c; /* zinc-600 */
+    --accent: #3b82f6; /* blue-600 */
+    --border-color: #e4e4e7; /* zinc-200 */
+    --mesh-opacity: 0.4;
+
+    color: #0043f6;
+
+    --zinc-900: #18181b;
+
+    --background: #f4f4f5;
+    --foreground: #0f172a;
+
+    /* Navbar Specific Styles */
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-border: #f1f5f9;
+
+    /* Card components */
+    --color-background: #ffffff;
+    --color-text-base: #09090b;
+    --color-text-secondary: #71717a;
+
+    --color-card-bg: rgba(255, 255, 255, 0.7);
+    --color-card-border: rgba(0, 0, 0, 0.1); /* The gradient colors */
+    --color-grad-from: #3b82f6;
+    --color-grad-to: #8b5cf6;
+  }
+
+  .dark {
+    /* Dark Mode Variables */
+    --bg-primary: #111827; /* zinc-950 */
+    --bg-secondary: #18181b; /* zinc-900 */
+    --text-main: #d4d4d8; /* zinc-300 */
+    --text-secondary: #9f9fa9; /* zinc-400 */
+    --accent: #60a5fa; /* blue-400 */
+    --border-color: #27272a; /* zinc-800 */
+    --mesh-opacity: 0.15;
+    --background: #111827;
+    --foreground: #fafafa;
+
+    /* Navbar Specific Styles - maybe a deeper zinc or navy */
+    --nav-bg: rgba(9, 9, 11, 0.8);
+    --nav-border: #18181b;
+
+    /* card component */
+    --color-card-bg: rgba(255, 255, 255, 0.03); /* Very thin white tint */
+    --color-card-border: rgba(255, 255, 255, 0.08); /* Subtle 'edge' */
+    --color-grad-from: #60a5fa;
+    --color-grad-to: #a78bfa;
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  animation: drawLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
