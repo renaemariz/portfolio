@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "../context/ThemeContext";
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL ?? "https://renaemariz.github.io";
 
@@ -25,9 +26,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-// app/layout.tsx
-import { ThemeProvider } from "@/context/ThemeContext";
 
 export default function RootLayout({
   children,

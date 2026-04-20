@@ -1,9 +1,7 @@
 "use client";
-import Navbar from "@/components/Navbar";
 import React, {
   createContext,
   useContext,
-  useEffect,
   useState,
   useLayoutEffect,
 } from "react";
@@ -46,7 +44,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       }
       return newVal;
     });
-    console.log("Current theme is now:", isDark);
   };
 
   // 3. Prevent rendering children until we know the theme

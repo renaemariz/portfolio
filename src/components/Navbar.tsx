@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
+import { fadeIn } from "@/lib/motions";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
@@ -76,7 +78,7 @@ export default function Navbar() {
             {/* HAMBURGER (Mobile Only) */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2.5 text-slate-600 dark:text-zinc-400 rounded-xl hover:bg-slate-100 dark:hover:bg-zinc-800"
+              className="md:hidden p-2.5 text-slate-600 dark:text-zinc-400 rounded-xl hover:bg-slate-100 dark:hover:bg-zinc-800 transition-all active:scale-90"
             >
               {isMenuOpen ? (
                 <svg
@@ -116,18 +118,24 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-zinc-950 border-b border-slate-100 dark:border-zinc-900 p-6 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-4">
-          {["About", "Projects", "Contact"].map((item) => (
-            <a
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-zinc-950 border-b border-slate-100 dark:border-zinc-900 p-6 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-4"
+        >
+          {links.map((item) => (
+            <Link
               key={item}
               href={`#${item.toLowerCase()}`}
               className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               {item}
-            </a>
+            </Link>
           ))}
-        </div>
+        </motion.div>
       )}
     </nav>
   );
