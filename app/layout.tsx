@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const metadata: Metadata = {
   title: "Renae Mariz Cariño",
@@ -10,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Renae Mariz Cariño",
     description: "Frontend Developer",
-    url: "https://renaecarino.github.io",
+    url: baseUrl,
     siteName: "Portfolio",
     images: [
       {
-        url: "https://renaecarino.github.io/banner-image.png",
+        url: `${baseUrl}/banner-image.png`,
         width: 1200,
         height: 630,
       },
