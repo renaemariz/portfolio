@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import Card from "./Card";
 import Pill from "./Pill";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInY, staggerContainer } from "@/lib/motions";
 
 // Define the structure for our skill categories
 interface SkillCategory {
@@ -51,7 +54,13 @@ const Skills = () => {
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
+        <motion.div
+          className="mb-12"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInY}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-main  text-center">
             Technical{" "}
             <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
@@ -59,20 +68,28 @@ const Skills = () => {
             </span>
           </h2>
           <div className="h-1 w-20 mt-4 bg-linear-to-r from-grad-from to-grad-to rounded-full" />
-        </div>
+        </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {skillData.map((category, index) => (
-            <Card
-              key={index}
-              index={index}
-              title={category.label}
-              data={category.skills}
-              renderItem={(skill) => <Pill text={skill} />}
-            />
+            <motion.div key={index} variants={fadeInLeft}>
+              <Card
+                key={index}
+                index={index}
+                title={category.label}
+                data={category.skills}
+                renderItem={(skill) => <Pill text={skill} />}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

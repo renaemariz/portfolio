@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeInY } from "@/lib/motions";
 
 const Contact = () => {
   return (
@@ -7,7 +10,13 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center text-center">
           {/* Header */}
-          <div className="mb-12">
+          <motion.div
+            className="mb-12"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInY}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-main mb-4">
               {"Let's "}
               <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
@@ -17,10 +26,16 @@ const Contact = () => {
             <p className="text-main max-w-lg mx-auto">
               {"I'm"} currently open to new opportunities.
             </p>
-          </div>
+          </motion.div>
 
           {/* Contact Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
+          <motion.div
+            variants={fadeInY}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl"
+          >
             {/* Email Card */}
             <Link
               href="mailto:renaemarizcarino@gmail.com"
@@ -75,7 +90,7 @@ const Contact = () => {
                 </strong>
               </div>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

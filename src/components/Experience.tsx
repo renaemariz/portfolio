@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import Card from "./Card";
 import Pill from "./Pill";
+import { fadeInLeft, fadeInRight, fadeInY } from "@/lib/motions";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const experiences = [
@@ -10,7 +13,7 @@ const Experience = () => {
       role: "Senior Frontend Developer",
       description: (
         <>
-          <ul className="list-disc pl-5">
+          <ul className="list-disc pl-5 marker:text-indigo-300">
             <li>
               Architected a suite of greenfield portals (Admin/Merchant) from
               inception, defining a scalable tech stack using Next.js and RTK
@@ -36,7 +39,7 @@ const Experience = () => {
       role: "Frontend Developer",
       description: (
         <>
-          <ul className="list-disc pl-5">
+          <ul className="list-disc pl-5 marker:text-indigo-300">
             <li>
               Created pages and functionality using Ionic to deliver standalone
               applications with a shared codebase, ensuring 100% cross-platform
@@ -58,7 +61,7 @@ const Experience = () => {
       role: "Quality Assurance / Developer",
       description: (
         <>
-          <ul className="list-disc pl-5">
+          <ul className="list-disc pl-5 marker:text-indigo-300">
             <li>
               Collaborated on an eLearning platform using Laravel, Vue.js, and
               Ionic, optimizing performance and expanding core feature sets.
@@ -85,43 +88,59 @@ const Experience = () => {
       className="container mx-auto py-24 px-6 bg-primary"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <motion.div
+          className="mb-12"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInY}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {" "}
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-main text-center">
             Work{" "}
             <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
               Experience
             </span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 group "
+              className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 group"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
             >
               {/* Left Column: Date and Company */}
-              <div className="md:w-1/4 flex flex-col pt-2 text-left md:text-right">
+              <motion.div
+                className="md:w-1/4 flex flex-col pt-2 text-left md:text-right"
+                variants={fadeInLeft}
+              >
                 <span className="text-lg font-bold tracking-wider text-indigo-400 uppercase">
                   {exp.date}
                 </span>
                 <span className="text-zinc-500 font-medium text-md">
                   {exp.company}
                 </span>
-              </div>
+              </motion.div>
 
               {/* Right Column: Content */}
-              <div className="md:w-2/4 flex flex-col pt-1">
+              <motion.div
+                className="md:w-2/4 flex flex-col pt-1"
+                variants={fadeInRight}
+              >
                 <Card
                   key={index}
                   index={index}
                   title={exp.role}
-                  description={exp.description}
+                  cardBody={exp.description}
                   data={exp.tech}
                   renderItem={(tech) => <Pill text={tech} />}
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

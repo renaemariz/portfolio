@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { fadeIn, fadeInY, staggerContainer } from "@/lib/motions";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
 
   const roles = [
-    "Renae Mariz Cariño",
     "Frontend Architecture Specialist",
     "Designing UI Systems",
     "Building Scalable Web Apps",
@@ -16,7 +17,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 3000);
+    }, 3500);
     return () => clearInterval(timer);
   }, [roles.length]);
 
@@ -29,27 +30,52 @@ export default function Hero() {
 
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 pt-20">
         {/* 2. LEFT CONTENT: Typography & CTA */}
-        <div className="space-y-8 text-center lg:text-left">
+        <motion.div
+          className="space-y-6 text-center lg:text-left"
+          initial="hidden"
+          whileInView="visible"
+          variants={staggerContainer}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div>
-            <p className="text-sm font-bold tracking-[0.2em] text-indigo-600 dark:text-blue-400 uppercase mb-4">
+            <motion.p
+              variants={fadeInY}
+              className="text-sm font-bold tracking-[0.2em] text-indigo-600 dark:text-blue-400 uppercase mb-4"
+            >
               Available for new opportunities
-            </p>
-            <h1 className="text-6xl xl:text-8xl font-black tracking-tight text-slate-900 dark:text-white leading-[0.9]">
+            </motion.p>
+
+            <motion.h1
+              variants={fadeInY}
+              className="text-4xl font-extrabold tracking-[0.1em] text-main dark:text-zinc-100 uppercase mb-4"
+            >
+              Renae Mariz Cariño
+            </motion.h1>
+            <motion.h1
+              variants={fadeInY}
+              className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-[0.9]"
+            >
               <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
                 {roles[roleIndex]}
               </span>
-            </h1>
+            </motion.h1>
           </div>
 
-          <p className="text-lg text-secondary max-w-md mx-auto lg:mx-0 leading-relaxed">
+          <motion.p
+            variants={fadeInY}
+            className="text-md text-secondary max-w-md mx-auto lg:mx-0 leading-relaxed"
+          >
             I build scalable web applications using{" "}
             <span className="text-main dark:text-zinc-100 font-semibold">
               React & Angular
             </span>
             , turning complex business logic into intuitive user experiences.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+          <motion.div
+            variants={fadeInY}
+            className="flex flex-wrap justify-center lg:justify-start gap-4"
+          >
             <Link
               href="#experience"
               className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-xl"
@@ -62,11 +88,17 @@ export default function Hero() {
             >
               Contact Me
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* 3. RIGHT CONTENT: The Glass Dashboard Hides on tablet to smaller screen*/}
-        <div className="hidden lg:block relative justify-self-center  lg:justify-self-end group ">
+        {/* 3. RIGHT CONTENT: The Dashboard Hides on tablet to smaller screen*/}
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="hidden lg:block relative justify-self-center  lg:justify-self-end group "
+        >
           {/* Outer Glow */}
           <div className="absolute -inset-10 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 
@@ -110,7 +142,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
