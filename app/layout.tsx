@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL ?? "https://renaemariz.github.io/";
+  process.env.NEXT_PUBLIC_BASE_URL ?? "https://renaemariz.github.io";
 
 export const metadata: Metadata = {
   title: "Renae Mariz Cariño",
