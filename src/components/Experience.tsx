@@ -85,7 +85,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="container mx-auto py-24 px-6 bg-primary"
+      className="container mx-auto py-24 px-6 bg-primary overflow-x-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
