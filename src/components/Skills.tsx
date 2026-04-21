@@ -21,6 +21,7 @@ const skillData: SkillCategory[] = [
       "React",
       "Angular",
       "TypeScript",
+      "Javascript (ES6+)",
       "Ionic",
       "Capacitor",
       "Cordova",
@@ -29,7 +30,15 @@ const skillData: SkillCategory[] = [
   {
     title: "UI / Design Systems",
     label: "UI / Design Systems",
-    skills: ["Tailwind CSS", "Storybook", "Angular Material", "Bootstrap"],
+    skills: [
+      "TailwindCSS",
+      "Ant Design",
+      "Storybook",
+      "shadcn",
+      "Chartjs",
+      "Echarts",
+      "Angular Material",
+    ],
   },
   {
     title: "Systems & Data",
@@ -37,11 +46,13 @@ const skillData: SkillCategory[] = [
     skills: [
       "RTK Query",
       "Redux",
+      "Webpack",
+      "Axios",
       "RESTful APIs",
       "AWS S3",
       "App Store",
       "Google Play",
-      "Webpack",
+      "Jira",
     ],
   },
 ];

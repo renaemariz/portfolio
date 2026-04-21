@@ -3,6 +3,7 @@ import React from "react";
 type CardProps<T> = {
   index: number;
   title?: string;
+  subTitle?: string;
   cardBody?: string | React.ReactNode;
   data?: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
@@ -11,6 +12,7 @@ type CardProps<T> = {
 const Card = <T,>({
   index,
   title,
+  subTitle,
   data,
   cardBody,
   renderItem,
@@ -21,8 +23,9 @@ const Card = <T,>({
       className="group rounded-3xl border border-card-border bg-card-bg shadow-xl transition-all duration-300 flex flex-col h-full"
     >
       <div className={`${cardBody ? "flex-grow" : ""}`}>
-        <div className="card-header bg-gradient-to-r from-green-400 to-blue-500 bg-linear-to-r from-indigo-400 to-cyan-400 bg-[length:100%_2px] bg-no-repeat bg-bottom p-8 md:p-6">
-          <h5 className="text-md font-semibold uppercase text-main">{title}</h5>
+        <div className="card-header bg-linear-to-br from-indigo-400 to-cyan-400 bg-[length:100%_2px] bg-no-repeat bg-bottom p-8 md:p-6">
+          <h3 className="text-md font-semibold uppercase text-main">{title}</h3>
+          <h4 className="text-sm font-semibold text-main">{subTitle}</h4>
         </div>
 
         {/* can support react nodes */}

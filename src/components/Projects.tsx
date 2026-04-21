@@ -8,14 +8,13 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
-      title: "Admin Portal (Cafe Solutions)",
-      tag: "Internal-Use",
-      visualClass: "bg-linear-to-br from-indigo-500/20 to-zinc-800/50",
+      title: "Admin Portal",
+      subTitle: "Cafe Solutions - Australia",
       description: (
         <>
           <p className="mt-1 mb-2">
             <strong>The Build: </strong> Architected a greenfield portal for
-            managing multi-branch merchant configurations and complex menu data.
+            managing merchant configurations, reports and complex menu data.
           </p>
           <p className="mt-1 mb-2">
             <strong>Custom UI: </strong>
@@ -26,7 +25,7 @@ const Projects = () => {
           <p className="my-1">
             <strong>Data Sync: </strong>
             Leveraged RTK Query for handle API requests and cache management,
-            ensuring data stayed in sync across the merchant platform..
+            ensuring data stayed in sync across the merchant platform.
           </p>
         </>
       ),
@@ -34,8 +33,7 @@ const Projects = () => {
     },
     {
       title: "Customer Portal",
-      tag: "Client-Facing",
-      visualClass: "bg-linear-to-br from-blue-500/20 to-zinc-800/50",
+      subTitle: "Casino Marker Technology - Las Vegas",
       description: (
         <>
           <p className="mt-1 mb-2">
@@ -60,14 +58,13 @@ const Projects = () => {
     },
     {
       title: "Merchant App",
-      tag: "Cross-Platform",
-      visualClass: "bg-linear-to-br from-emerald-500/20 to-zinc-800/50",
+      subTitle: "Financial Services - Bahamas",
       description: (
         <>
           <p className="mt-1 mb-2">
             <strong>The Build: </strong> Developed an App for Android and Sunmi
-            POS hardware, enabling merchants to facilitate mobile top-ups,
-            SandDollar digital payments, and utility transactions.
+            POS hardware, enabling merchants or agents to facilitate mobile
+            top-ups, SandDollar digital payments, and utility transactions.
           </p>
           <p className="mt-1 mb-2">
             <strong>API Integration: </strong>
@@ -115,6 +112,7 @@ const Projects = () => {
                 key={index}
                 index={index}
                 title={project.title}
+                subTitle={project.subTitle}
                 cardBody={project.description}
                 data={project.tech}
                 renderItem={(tech) => <Pill text={tech} />}

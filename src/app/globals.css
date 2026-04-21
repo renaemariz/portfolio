@@ -10,6 +10,8 @@
   --color-card-border: rgba(255, 255, 255, 0.2);
   --color-table-bg: rgba(255, 255, 255, 0.4);
   --color-table-row-bg: rgba(255, 255, 255, 0.2);
+  --color-nav-bg: rgba(255, 255, 255, 0.8);
+  --color-nav-border: #f1f5f9;
 }
 @layer base {
   :root {
@@ -18,7 +20,6 @@
     --bg-secondary: #f4f4f5; /* zinc-100 */
     --text-main: #18181b; /* zinc-900 */
     --text-secondary: #52525c; /* zinc-600 */
-    --accent: #3b82f6; /* blue-600 */
     --border-color: #e4e4e7; /* zinc-200 */
     --mesh-opacity: 0.4;
     color: #0043f6;
@@ -46,15 +47,14 @@
     --bg-secondary: #18181b; /* zinc-900 */
     --text-main: #d4d4d8; /* zinc-300 */
     --text-secondary: #9f9fa9; /* zinc-400 */
-    --accent: #60a5fa; /* blue-400 */
     --border-color: #27272a; /* zinc-800 */
     --mesh-opacity: 0.15;
     --background: #111827;
     --foreground: #fafafa;
 
     /* Navbar Specific Styles - maybe a deeper zinc or navy */
-    --nav-bg: rgba(9, 9, 11, 0.8);
-    --nav-border: #18181b;
+    --color-nav-bg: rgba(9, 9, 11, 0.8); /*zinc-950/80*/
+    --color-nav-border: #18181b;
 
     /* card component */
     --color-card-bg: rgba(255, 255, 255, 0.03); /* Very thin white tint */

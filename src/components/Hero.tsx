@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { fadeIn, fadeInY, staggerContainer } from "@/lib/motions";
+import { AnimatePresence, motion } from "framer-motion";
+import { fadeIn, fadeInY, fadeInYSwipe, staggerContainer } from "@/lib/motions";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -22,7 +22,7 @@ export default function Hero() {
   }, [roles.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-500">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary transition-colors duration-500">
       {/* 1. BACKGROUND LAYER: Mesh Gradient */}
       <div className="absolute -inset-[200px] z-0 animate-mesh pointer-events-none opacity-40 dark:opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#3b82f6_0%,transparent_40%),radial-gradient(circle_at_80%_20%,#a855f7_0%,transparent_40%),radial-gradient(circle_at_50%_80%,#22c55e_0%,transparent_40%)] blur-[80px]" />
@@ -55,9 +55,22 @@ export default function Hero() {
               variants={fadeInY}
               className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-[0.9]"
             >
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+              {/* <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
                 {roles[roleIndex]}
-              </span>
+              </span> */}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={roles[roleIndex]}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={fadeInYSwipe}
+                  animate="visible"
+                  exit="exit"
+                  className="inline-block py-1 text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+                >
+                  {roles[roleIndex]}
+                </motion.span>
+              </AnimatePresence>
             </motion.h1>
           </div>
 

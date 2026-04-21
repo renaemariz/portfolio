@@ -104,7 +104,7 @@ const Experience = () => {
           </h2>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-12 w-full">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -117,6 +117,8 @@ const Experience = () => {
               <motion.div
                 className="md:w-1/4 flex flex-col pt-2 text-left md:text-right"
                 variants={fadeInLeft}
+                initial="hidden"
+                animate="visible"
               >
                 <span className="text-lg font-bold tracking-wider text-indigo-400 uppercase">
                   {exp.date}
@@ -127,19 +129,18 @@ const Experience = () => {
               </motion.div>
 
               {/* Right Column: Content */}
-              <motion.div
-                className="md:w-2/4 flex flex-col pt-1"
-                variants={fadeInRight}
-              >
-                <Card
-                  key={index}
-                  index={index}
-                  title={exp.role}
-                  cardBody={exp.description}
-                  data={exp.tech}
-                  renderItem={(tech) => <Pill text={tech} />}
-                />
-              </motion.div>
+              <div className="md:w-2/4 pt-1">
+                <motion.div className="" variants={fadeInRight}>
+                  <Card
+                    key={index}
+                    index={index}
+                    title={exp.role}
+                    cardBody={exp.description}
+                    data={exp.tech}
+                    renderItem={(tech) => <Pill text={tech} />}
+                  />
+                </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
