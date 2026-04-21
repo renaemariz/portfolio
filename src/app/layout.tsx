@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className=" min-h-full flex flex-col bg-white dark:bg-zinc-950 transition-colors duration-500">
+      <body className="min-h-full overflow-x-hidden bg-primary transition-colors duration-500">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

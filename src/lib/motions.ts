@@ -20,7 +20,32 @@ export const fadeIn: Variants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.4, 1, 0.36, 1],
+    },
+  },
+};
+export const fadeInYSwipe: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 25,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.4, 1, 0.36, 1],
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -10,
+    scale: 0.9,
+    transition: {
+      duration: 0.2,
+      ease: [0.4, 0, 1, 1],
     },
   },
 };
@@ -34,7 +59,7 @@ export const fadeInY: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.4, 1, 0.36, 1],
     },
   },
 };
@@ -43,7 +68,10 @@ export const fadeInLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: "spring", duration: 0.8, bounce: 0.3 },
+    transition: {
+      duration: 0.6,
+      ease: [0.4, 1, 0.36, 1],
+    },
   },
 };
 
@@ -52,6 +80,9 @@ export const fadeInRight: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: "spring", duration: 0.8, bounce: 0.3 },
+    transition: {
+      duration: 0.6,
+      ease: [0.4, 1, 0.36, 1],
+    },
   },
 };

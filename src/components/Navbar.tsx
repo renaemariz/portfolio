@@ -10,18 +10,15 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const links = ["About", "Experience", "Projects", "Skills", "Contact"];
   return (
-    <nav className="fixed top-0 w-full z-[100] py-4 bg-white/80 dark:bg-zinc-950/80 border-b border-slate-100 dark:border-zinc-900 transition-colors duration-500">
-      <div className="container mx-auto px-6 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full z-[100] py-4 bg-nav-bg border-b border-slate-100 dark:border-zinc-900 transition-colors duration-500">
+      <div className="container mx-auto px-2 flex items-center justify-between gap-1 md:gap-2">
         {/* LOGO */}
-        <Link
-          href="/"
-          className="text-lg font-black tracking-tighter text-main uppercase"
-        >
+        <Link href="/" className="text-lg font-bold text-main uppercase">
           RENAE CARINO
         </Link>
 
         {/* RIGHT ACTIONS */}
-        <div className="flex items-center gap-2 md:gap-6">
+        <div className="flex items-center gap-2 md:gap-3">
           {/* DESKTOP NAVIGATION */}
           <div className="hidden md:flex gap-10 mr-4">
             {links.map((item) => (
