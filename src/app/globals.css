@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* You must define it here for Tailwind to generate the 'bg-card-bg' utility */
