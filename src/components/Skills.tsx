@@ -96,6 +96,7 @@ const Skills = () => {
                 index={index}
                 title={category.label}
                 data={category.skills}
+                renderItemStyle="fill"
                 renderItem={(skill) => <Pill text={skill} />}
               />
             </motion.div>

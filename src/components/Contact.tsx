@@ -33,7 +33,7 @@ const Contact = () => {
             variants={fadeInY}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl"
           >
             {/* Email Card */}
@@ -55,7 +55,7 @@ const Contact = () => {
                 </svg>
               </div>
               <div className="text-left">
-                <span className="block text-xs font-bold text-zinc-500 uppercase tracking-wider">
+                <span className="block text-xs font-bold text-secondary uppercase tracking-wider">
                   Email Me
                 </span>
                 <strong className="text-main dark:text-zinc-100 group-hover:text-indigo-400 transition-colors">
@@ -82,7 +82,7 @@ const Contact = () => {
                 </svg>
               </div>
               <div className="text-left">
-                <span className="block text-xs font-bold text-zinc-500 uppercase tracking-wider">
+                <span className="block text-xs font-bold text-secondary uppercase tracking-wider">
                   LinkedIn
                 </span>
                 <strong className="text-main dark:text-zinc-100 group-hover:text-blue-400 transition-colors">

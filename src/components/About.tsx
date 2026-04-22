@@ -56,6 +56,32 @@ const About = () => {
       value:
         "Modernizing legacy platforms into scalable, maintainable frontend solutions.",
     },
+
+    {
+      label: "Environment",
+      value: (
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-bold text-secondary">
+              Work from home & Hybrid Ready
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {["Metro Manila Based", "Modern Workspace", "Specialty Coffee"].map(
+              (tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] px-2 py-1 rounded-md text-secondary border border-slate-200 dark:border-zinc-700"
+                >
+                  {tag}
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+      ),
+    },
   ];
   return (
     <section id="about" className="container mx-auto py-24 px-6 bg-primary">
