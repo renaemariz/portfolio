@@ -32,7 +32,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-1 border-l border-slate-100 dark:border-zinc-800 pl-4 md:pl-6">
+          <div className="flex items-center gap-1 border-l border-slate-200 dark:border-zinc-800 pl-4 md:pl-6">
             {/* THEME TOGGLE BUTTON */}
             <button
               onClick={toggleTheme}
@@ -76,6 +76,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2.5 text-slate-600 dark:text-zinc-400 rounded-xl hover:bg-slate-100 dark:hover:bg-zinc-800 transition-all active:scale-90"
+              aria-label="Menu"
             >
               {isMenuOpen ? (
                 <svg

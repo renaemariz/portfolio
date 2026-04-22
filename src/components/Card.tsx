@@ -22,7 +22,7 @@ const Card = <T,>({
   return (
     <div
       key={index}
-      className="group rounded-3xl border border-card-border bg-card-bg shadow-xl transition-all duration-300 flex flex-col h-full"
+      className="group rounded-3xl border border-card-border bg-card-bg shadow-xl flex flex-col h-full"
     >
       <div className={`${cardBody ? "flex-grow" : ""}`}>
         <div className="card-header bg-linear-to-br from-indigo-400 to-cyan-400 bg-[length:100%_2px] bg-no-repeat bg-bottom p-8 md:p-6">

@@ -4,6 +4,7 @@ import React, {
   useContext,
   useState,
   useLayoutEffect,
+  useEffect,
 } from "react";
 
 const ThemeContext = createContext({
@@ -15,20 +16,19 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   // 1. Initialize state as null or a neutral value to avoid hydration mismatch
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
-  // 2. Use a LayoutEffect for the initial DOM sync
-  // This fires before the browser paints, preventing the "flash"
-  useLayoutEffect(() => {
+  useEffect(() => {
     const stored = localStorage.getItem("theme");
     const systemDark = window.matchMedia(
       "(prefers-color-scheme: dark)",
     ).matches;
-    const shouldBeDark = stored === "dark" || (!stored && systemDark);
+    const initialTheme =
+      stored === "dark" || (!stored && systemDark) ? true : false;
 
-    if (shouldBeDark) {
+    requestAnimationFrame(() => {
+      setIsDark(initialTheme);
+    });
+    if (initialTheme) {
       document.documentElement.classList.add("dark");
-      setIsDark(true);
-    } else {
-      setIsDark(false);
     }
   }, []);
 
@@ -46,9 +46,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     });
   };
 
-  // 3. Prevent rendering children until we know the theme
-  // This avoids the "Cascading Render" warning by ensuring
-  // the first paint is the correct one.
   if (isDark === null) {
     return <div style={{ visibility: "hidden" }}>{children}</div>;
   }

@@ -3,6 +3,7 @@ import React from "react";
 import InfoTable from "./Table";
 import { motion } from "framer-motion";
 import { fadeInY } from "@/lib/motions";
+import Pill from "./Pill";
 const About = () => {
   const aboutData = [
     {
@@ -70,12 +71,7 @@ const About = () => {
           <div className="flex flex-wrap gap-2">
             {["Metro Manila Based", "Modern Workspace", "Specialty Coffee"].map(
               (tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] px-2 py-1 rounded-md text-secondary border border-slate-200 dark:border-zinc-700"
-                >
-                  {tag}
-                </span>
+                <Pill key={tag} text={tag} />
               ),
             )}
           </div>
