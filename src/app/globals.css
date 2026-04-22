@@ -1,8 +1,4 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* You must define it here for Tailwind to generate the 'bg-card-bg' utility */
@@ -85,4 +81,14 @@ body {
 
 .animate-draw {
   animation: drawLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+/* Card Footer Pill Style */
+.card-footer .card-footer-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-footer-content.fill > * {
+  flex-grow: 1;
 }

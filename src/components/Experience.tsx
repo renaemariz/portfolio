@@ -123,7 +123,7 @@ const Experience = () => {
                 <span className="text-lg font-bold tracking-wider text-indigo-400 uppercase">
                   {exp.date}
                 </span>
-                <span className="text-zinc-500 font-medium text-md">
+                <span className="text-secondary font-medium text-md">
                   {exp.company}
                 </span>
               </motion.div>

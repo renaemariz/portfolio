@@ -7,6 +7,7 @@ type CardProps<T> = {
   cardBody?: string | React.ReactNode;
   data?: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
+  renderItemStyle?: "fill" | "auto";
 };
 
 const Card = <T,>({
@@ -16,6 +17,7 @@ const Card = <T,>({
   data,
   cardBody,
   renderItem,
+  renderItemStyle = "auto",
 }: CardProps<T>) => {
   return (
     <div
@@ -38,7 +40,7 @@ const Card = <T,>({
 
       {/* footer */}
       <div className="card-footer p-8 md:p-6 ">
-        <div className="flex flex-wrap gap-2">
+        <div className={`card-footer-content gap-2 ${renderItemStyle}`}>
           {" "}
           {data?.map((item, i) => (
             <React.Fragment key={i}>{renderItem(item, i)}</React.Fragment>
