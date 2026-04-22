@@ -22,13 +22,12 @@ export default function Hero() {
   }, [roles.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary transition-colors duration-500">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-primary">
       {/* 1. BACKGROUND LAYER: Mesh Gradient */}
-      <div className="absolute -inset-[200px] z-0 animate-mesh pointer-events-none opacity-40 dark:opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#3b82f6_0%,transparent_40%),radial-gradient(circle_at_80%_20%,#a855f7_0%,transparent_40%),radial-gradient(circle_at_50%_80%,#22c55e_0%,transparent_40%)] blur-[80px]" />
+      <div className="absolute -inset-[200px] z-0 pointer-events-none opacity-40 dark:opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#3b82f6_0%,transparent_40%),radial-gradient(circle_at_80%_20%,#a855f7_0%,transparent_40%),radial-gradient(circle_at_50%_80%,#22c55e_0%,transparent_40%)]" />
       </div>
-
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 pt-20">
+      <div className="container  mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 pt-20">
         {/* 2. LEFT CONTENT: Typography & CTA */}
         <motion.div
           className="space-y-6 text-center lg:text-left"
@@ -91,13 +90,13 @@ export default function Hero() {
           >
             <Link
               href="#experience"
-              className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-xl"
+              className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:scale-105 shadow-xl"
             >
               View Experience{" "}
             </Link>
             <Link
               href="#contact"
-              className="px-8 py-4 border-2 border-slate-300 dark:border-zinc-800 dark:text-white font-bold rounded-2xl hover:scale-105 transition-all"
+              className="px-8 py-4 border-2 border-slate-500 dark:text-white font-bold rounded-2xl hover:scale-105"
             >
               Contact Me
             </Link>
@@ -113,8 +112,6 @@ export default function Hero() {
           className="hidden lg:block relative justify-self-center  lg:justify-self-end group "
         >
           {/* Outer Glow */}
-          <div className="absolute -inset-10 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-
           <div className="relative w-[340px] md:w-[400px] bg-white/80 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800 rounded-[2.5rem] shadow-2xl overflow-hidden transform transition-all duration-700 group-hover:-translate-y-2">
             {/* Header / Traffic Lights */}
             <div className="flex items-center justify-between px-8 py-5 border-b border-slate-100 dark:border-zinc-800">

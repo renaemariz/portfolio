@@ -61,7 +61,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="container mx-auto py-24 px-6 transition-colors duration-500"
+      className="container mx-auto py-24 px-6 transition-all duration-500"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}

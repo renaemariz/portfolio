@@ -45,7 +45,7 @@ const InfoTable = ({ title, data }: InfoTableProps) => {
               <motion.tr
                 key={index}
                 variants={fadeInY}
-                className="group animate-row transition-colors hover:bg-slate-50/50 dark:hover:bg-slate-800/30
+                className="group animate-row hover:bg-slate-50/50 dark:hover:bg-slate-800/30
                 flex flex-col md:table-row"
               >
                 {/* Label Column */}
