@@ -54,10 +54,10 @@ const Contact = () => {
                 </svg>
               </div>
               <div className="text-left min-w-0 flex-1">
-                <span className="block text-xs font-bold text-secondary uppercase tracking-wider">
+                <span className="block text-xs font-bold text-secondary uppercase">
                   Email Me
                 </span>
-                <strong className="block break-all md:break-words text-main text-[10px] md:text-[14px] group-hover:text-indigo-400">
+                <strong className="block break-all md:break-words text-main text-[12px] md:text-[14px] group-hover:text-indigo-400">
                   renaemarizcarino@gmail.com
                 </strong>
               </div>
@@ -80,10 +80,10 @@ const Contact = () => {
                 </svg>
               </div>
               <div className="text-left min-w-0 flex-1">
-                <span className="block text-xs font-bold text-secondary uppercase tracking-wider">
+                <span className="block text-xs font-bold text-secondary uppercase">
                   LinkedIn
                 </span>
-                <strong className="block break-all md:break-words text-main text-[10px] md:text-[14px] group-hover:text-blue-400">
+                <strong className="block break-all md:break-words text-main text-[12px] md:text-[14px] group-hover:text-blue-400">
                   linkedin.com/in/renae-carino
                 </strong>
               </div>

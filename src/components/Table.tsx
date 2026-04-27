@@ -49,7 +49,7 @@ const InfoTable = ({ title, data }: InfoTableProps) => {
                 flex flex-col md:table-row"
               >
                 {/* Label Column */}
-                <td className="py-5 px-6 md:w-1/3 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-r border-slate-100 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-800/20 ">
+                <td className="py-5 px-6 md:w-1/3 text-[11px] font-bold text-slate-500 dark:text-slate-200 uppercase tracking-wider border-r border-slate-100 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-800/20 ">
                   {row.label}
                 </td>
                 {/* Value Column */}

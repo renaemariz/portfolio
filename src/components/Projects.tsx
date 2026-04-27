@@ -29,7 +29,14 @@ const Projects = () => {
           </p>
         </>
       ),
-      tech: ["React", "Nextjs", "TailwindCSS", "Typescript"],
+      tech: [
+        "React",
+        "Nextjs",
+        "TailwindCSS",
+        "RTK Query",
+        "Echarts",
+        "Storybook",
+      ],
     },
     {
       title: "Customer Portal",
@@ -54,7 +61,7 @@ const Projects = () => {
           </p>
         </>
       ),
-      tech: ["Angular", "RxJS", "SCSS", "RESTful APIs"],
+      tech: ["Angular", "RxJS", "Ant Design", "SCSS", "TypeScript", "Chartjs"],
     },
     {
       title: "Merchant App",
@@ -77,7 +84,7 @@ const Projects = () => {
           </p>
         </>
       ),
-      tech: ["Ionic", "Capacitor", "Angular", "Sunmi Hardware"],
+      tech: ["Ionic", "Capacitor", "Angular", "Google Play", "Sunmi Hardware"],
     },
   ];
 
@@ -115,6 +122,7 @@ const Projects = () => {
                 subTitle={project.subTitle}
                 cardBody={project.description}
                 data={project.tech}
+                renderItemStyle="fill"
                 renderItem={(tech) => <Pill text={tech} />}
               />
             </motion.div>

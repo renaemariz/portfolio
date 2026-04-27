@@ -9,6 +9,10 @@
   --color-table-row-bg: rgba(255, 255, 255, 0.2);
   --color-nav-bg: rgba(255, 255, 255, 0.8);
   --color-nav-border: #f1f5f9;
+  --bg-hero:
+    radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, #a855f7 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, #c5ffff 0%, transparent 40%);
 }
 @layer base {
   :root {

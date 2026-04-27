@@ -59,10 +59,7 @@ const skillData: SkillCategory[] = [
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="container mx-auto py-24 px-6 transition-all duration-500"
-    >
+    <section id="skills" className="container mx-auto py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

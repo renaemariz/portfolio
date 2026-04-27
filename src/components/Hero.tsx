@@ -22,10 +22,13 @@ export default function Hero() {
   }, [roles.length]);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-primary">
+    <section
+      id="hero"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-primary"
+    >
       {/* 1. BACKGROUND LAYER: Mesh Gradient */}
       <div className="absolute -inset-[200px] z-0 pointer-events-none opacity-40 dark:opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#3b82f6_0%,transparent_40%),radial-gradient(circle_at_80%_20%,#a855f7_0%,transparent_40%),radial-gradient(circle_at_50%_80%,#22c55e_0%,transparent_40%)]" />
+        <div className="absolute inset-0 bg-(image:--bg-hero)" />
       </div>
       <div className="container  mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 pt-20">
         {/* 2. LEFT CONTENT: Typography & CTA */}
@@ -89,14 +92,16 @@ export default function Hero() {
             className="flex flex-wrap justify-center lg:justify-start gap-4"
           >
             <Link
-              href="#experience"
+              href="/#experience"
               className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:scale-105 shadow-xl"
+              replace
             >
               View Experience{" "}
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="px-8 py-4 border-2 border-slate-500 dark:text-white font-bold rounded-2xl hover:scale-105"
+              replace
             >
               Contact Me
             </Link>
