@@ -1,16 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 import { fadeIn } from "@/lib/motions";
 import { motion } from "framer-motion";
-
-export default function Navbar() {
+interface NavbarProps {
+  activeNav: string;
+}
+export default function Navbar({ activeNav }: NavbarProps) {
   const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const links = ["About", "Experience", "Projects", "Skills", "Contact"];
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] py-4 bg-nav-bg border-b border-slate-100 dark:border-zinc-900 transition-colors duration-500">
+    <nav className="fixed top-0 left-0 w-full z-[100] py-4 bg-nav-bg border-b border-slate-100 dark:border-zinc-900">
       <div className="container mx-auto px-2 flex items-center justify-between gap-1 md:gap-2">
         {/* LOGO */}
         <Link href="/" className="text-lg font-bold text-main uppercase">
@@ -22,13 +24,14 @@ export default function Navbar() {
           {/* DESKTOP NAVIGATION */}
           <div className="hidden md:flex gap-10 mr-4">
             {links.map((item) => (
-              <a
+              <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-white transition-colors"
+                className={`${activeNav == item.toLowerCase() ? "text-indigo-400" : "text-main"} text-[11px] font-bold uppercase tracking-[0.2em] hover:text-indigo-600  dark:hover:text-white `}
+                replace
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -36,7 +39,7 @@ export default function Navbar() {
             {/* THEME TOGGLE BUTTON */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-xl transition-all active:scale-90"
+              className="p-2.5 text-slate-600 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-xl transition-all active:scale-90"
               aria-label="Toggle Theme"
             >
               {isDark ? (
@@ -75,7 +78,7 @@ export default function Navbar() {
             {/* HAMBURGER (Mobile Only) */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2.5 text-slate-600 dark:text-zinc-400 rounded-xl hover:bg-slate-100 dark:hover:bg-zinc-800 transition-all active:scale-90"
+              className="md:hidden p-2.5 text-slate-600 dark:text-zinc-200 rounded-xl hover:bg-slate-100 dark:hover:bg-zinc-800 transition-all"
               aria-label="Menu"
             >
               {isMenuOpen ? (
@@ -121,14 +124,15 @@ export default function Navbar() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-zinc-950 border-b border-slate-100 dark:border-zinc-900 p-6 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-4"
+          className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-zinc-950 border-b border-slate-100 dark:border-zinc-900 p-6 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-4 transition-colors"
         >
           {links.map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white"
+              className={`text-sm font-bold uppercase tracking-widest ${activeNav == item.toLowerCase() ? "text-indigo-400" : "text-main"}`}
               onClick={() => setIsMenuOpen(false)}
+              replace
             >
               {item}
             </Link>
