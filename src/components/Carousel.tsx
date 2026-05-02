@@ -99,7 +99,6 @@ const EmblaCarousel = (props: PropType) => {
           </>
         )}
       </AnimatePresence>
-      ,
     </>
   );
 };
