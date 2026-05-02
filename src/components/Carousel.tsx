@@ -7,6 +7,7 @@ import { AnimatePresence } from "motion/react";
 import { motion } from "framer-motion";
 import { Portal } from "./Portal";
 import Autoplay from "embla-carousel-autoplay";
+import ModalSlider from "./ModalCarousel";
 
 export type Slide = {
   id: number;
@@ -87,12 +88,11 @@ const EmblaCarousel = (props: PropType) => {
                   layoutId={`image-${selectedId}`}
                   className="relative w-full max-w-4xl aspect-video"
                 >
-                  <Image
-                    src={activeSlide.url}
-                    alt={activeSlide.alt}
-                    fill
-                    className="object-contain"
-                  />
+                  <ModalSlider
+                    slides={slides}
+                    initialIndex={selectedId}
+                    onClose={() => setSelectedId(null)}
+                  ></ModalSlider>
                 </motion.div>
               </motion.div>
             </Portal>
