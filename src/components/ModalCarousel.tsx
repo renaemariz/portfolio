@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import Image from "next/image";
-import { AnimatePresence } from "motion/react";
 import { motion } from "framer-motion";
-import { Portal } from "./Portal";
-import Autoplay from "embla-carousel-autoplay";
 
 export type Slide = {
   id: number;
@@ -20,7 +16,7 @@ type PropType = {
   onClose: () => void;
 };
 
-const ModalSlider = ({ slides, initialIndex, onClose }: PropType) => {
+const ModalCarousel = ({ slides, initialIndex, onClose }: PropType) => {
   const [emblaRef] = useEmblaCarousel({
     startIndex: initialIndex,
     loop: true,
@@ -31,7 +27,7 @@ const ModalSlider = ({ slides, initialIndex, onClose }: PropType) => {
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-8 h-10 w-10 z-50 text-white text-xl bg-black/50 rounded-full"
+        className="absolute top-[-30px] right-[5%] h-10 w-10 z-50 text-white text-xl bg-slate-600/80 rounded-full"
       >
         ✕
       </button>
@@ -46,11 +42,11 @@ const ModalSlider = ({ slides, initialIndex, onClose }: PropType) => {
             >
               <motion.div
                 layoutId={`img-${slide.id}`} // Matches the main carousel ID
-                className="relative w-full max-w-4xl aspect-video"
+                className="relative w-full h-full max-w-4xl aspect-video"
               >
                 <Image
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   src={slide.url}
                   alt={slide.alt}
                 />
@@ -62,4 +58,4 @@ const ModalSlider = ({ slides, initialIndex, onClose }: PropType) => {
     </div>
   );
 };
-export default ModalSlider;
+export default ModalCarousel;
