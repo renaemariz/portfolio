@@ -57,9 +57,6 @@ export default function Hero() {
               variants={fadeInY}
               className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-[0.9]"
             >
-              {/* <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                {roles[roleIndex]}
-              </span> */}
               <AnimatePresence mode="wait">
                 <motion.span
                   key={roles[roleIndex]}

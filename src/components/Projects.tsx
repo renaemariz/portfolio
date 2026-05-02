@@ -43,20 +43,17 @@ const Projects = () => {
         {
           id: 1,
           url: "/assets/images/admin-portal-img1.png",
-          alt: "Mountain landscape in autumn",
-          caption: "Explore the Great Outdoors",
+          alt: "Admin Portal Feature Card Management",
         },
         {
           id: 2,
           url: "/assets/images/admin-portal-img2.png",
-          alt: "Mountain landscape in autumn",
-          caption: "Explore the Great Outdoors",
+          alt: "Admin Portal Feature Merchants Table",
         },
         {
           id: 3,
           url: "/assets/images/admin-portal-img3.png",
-          alt: "Mountain landscape in autumn",
-          caption: "Explore the Great Outdoors",
+          alt: "Admin Portal Feature Reports",
         },
       ],
     },
@@ -88,20 +85,17 @@ const Projects = () => {
         {
           id: 4,
           url: "/assets/images/customer-portal-img1.png",
-          alt: "Customer Portal Feature Image",
-          caption: "Explore the Great Outdoors",
+          alt: "Customer Portal Feature Create Account",
         },
         {
           id: 5,
           url: "/assets/images/customer-portal-img2.png",
-          alt: "Customer Portal Feature Image",
-          caption: "Explore the Great Outdoors",
+          alt: "Customer Portal Feature Player Input Details",
         },
         {
           id: 6,
           url: "/assets/images/customer-portal-img3.png",
-          alt: "Customer Portal Feature Image",
-          caption: "Explore the Great Outdoors",
+          alt: "Customer Portal Feature Dashboard",
         },
       ],
     },
@@ -113,7 +107,8 @@ const Projects = () => {
           <p className="mt-1 mb-2">
             <strong>The Build: </strong> Developed an App for Android and Sunmi
             POS hardware, enabling merchants or agents to facilitate mobile
-            top-ups, QR scanning, utility and other transactions.
+            top-ups, QR generation and scanning, utility payments and other
+            transactions.
           </p>
           <p className="mt-1 mb-2">
             <strong>API Integration: </strong>
@@ -139,20 +134,17 @@ const Projects = () => {
         {
           id: 7,
           url: "/assets/images/mobile-app-img1.png",
-          alt: "Mobile App Feature Image",
-          caption: "Explore the Great Outdoors",
+          alt: "Mobile App Feature Reports",
         },
         {
           id: 8,
           url: "/assets/images/mobile-app-img2.png",
-          alt: "Mobile App Feature Image",
-          caption: "Explore the Great Outdoors",
+          alt: "Mobile App Feature QR Generation",
         },
         {
           id: 9,
           url: "/assets/images/mobile-app-img3.png",
-          alt: "Mobile App Feature Image",
-          caption: "Explore the Great Outdoors",
+          alt: "Mobile App Feature Mobile Topup",
         },
       ],
     },
@@ -168,7 +160,7 @@ const Projects = () => {
           variants={fadeInY}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-main  text-center">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-main text-center">
             Project{" "}
             <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
               Highlights

@@ -60,7 +60,7 @@ export const DotButton = (props: PropType) => {
   const { children, ...restProps } = props;
 
   return (
-    <button type="button" {...restProps}>
+    <button aria-label="carousel-button" type="button" {...restProps}>
       {children}
     </button>
   );

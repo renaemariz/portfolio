@@ -12,7 +12,6 @@ export type Slide = {
   id: number;
   url: string;
   alt: string;
-  caption?: string;
 };
 type PropType = {
   slides: Slide[];
@@ -46,7 +45,7 @@ const EmblaCarousel = (props: PropType) => {
                 >
                   <Image
                     fill
-                    className="object-contain p-4"
+                    className="object-cover"
                     src={slide.url}
                     alt={slide.alt}
                   />
@@ -54,18 +53,18 @@ const EmblaCarousel = (props: PropType) => {
               </div>
             ))}
           </div>
-        </div>
-        <div className="embla__controls">
-          <div className="embla__dots">
-            {scrollSnaps.map((_, index) => (
-              <DotButton
-                key={index}
-                onClick={() => onDotButtonClick(index)}
-                className={"embla__dot".concat(
-                  index === selectedIndex ? " embla__dot--selected" : "",
-                )}
-              />
-            ))}
+          <div className="embla__controls bg-black/60 w-[100%]">
+            <div className="embla__dots ">
+              {scrollSnaps.map((_, index) => (
+                <DotButton
+                  key={index}
+                  onClick={() => onDotButtonClick(index)}
+                  className={"embla__dot".concat(
+                    index === selectedIndex ? " embla__dot--selected" : "",
+                  )}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

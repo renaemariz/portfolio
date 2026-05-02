@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useLayoutEffect,
-  useEffect,
-} from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext({
   isDark: false,
@@ -13,7 +7,6 @@ const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  // 1. Initialize state as null or a neutral value to avoid hydration mismatch
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {

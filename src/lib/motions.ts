@@ -94,7 +94,7 @@ export const fadeInRightToLeft: Variants = {
     x: 0,
     y: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
       ease: [0.4, 1, 0.4, 1],
     },
   },

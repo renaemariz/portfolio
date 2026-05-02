@@ -120,7 +120,7 @@ const Experience = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <span className="text-lg font-bold tracking-wider text-indigo-400 uppercase">
+                <span className="text-lg font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
                   {exp.date}
                 </span>
                 <span className="text-secondary font-medium text-md">
