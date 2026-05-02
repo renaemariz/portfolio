@@ -88,14 +88,14 @@ export const fadeInRight: Variants = {
 };
 
 export const fadeInRightToLeft: Variants = {
-  hidden: { opacity: 0, x: 50, y: 50 },
+  hidden: { opacity: 0, x: 10, y: 50 },
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: [0.4, 1, 0.36, 1],
+      duration: 0.3,
+      ease: [0.4, 1, 0.4, 1],
     },
   },
 };

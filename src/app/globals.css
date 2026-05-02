@@ -122,3 +122,7 @@ body {
   padding: 15px 10px;
   display: flex;
 }
+
+section {
+  overflow-x: hidden;
+}
