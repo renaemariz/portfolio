@@ -34,7 +34,7 @@ const skillData: SkillCategory[] = [
       { name: "NG-ZORRO", icon: "logos:ant-design" },
       { name: "Storybook", icon: "logos:storybook-icon" },
       { name: "shadcn", icon: "simple-icons:shadcnui" },
-      { name: "Angular Material", icon: "logos:material-ui" },
+      { name: "Angular Material", icon: "simple-icons:angular" },
       { name: "SCSS", icon: "logos:sass" },
       { name: "RTK Query", icon: "logos:redux" },
       { name: "Chartjs", icon: "logos:chartjs" },
@@ -88,7 +88,7 @@ const Skills = () => {
                   <motion.div
                     variants={fadeInRightToLeft}
                     key={i}
-                    className="text-sm text-secondary rounded-2xl bg-slate-100 dark:bg-slate-800/50 icon-wrapper "
+                    className="text-sm text-secondary rounded-2xl bg-slate-200 dark:bg-slate-800/50 icon-wrapper"
                   >
                     <div className="icon-image-container">
                       <Icon icon={skill.icon} width="32" height="32" />
