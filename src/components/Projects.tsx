@@ -35,8 +35,29 @@ const Projects = () => {
         "Nextjs",
         "Tanstack Table",
         "RTK Query",
-        "Echarts",
+        "Recharts",
         "Storybook",
+        "TailwindCSS",
+      ],
+      slides: [
+        {
+          id: 1,
+          url: "/assets/images/admin-portal-img1.png",
+          alt: "Mountain landscape in autumn",
+          caption: "Explore the Great Outdoors",
+        },
+        {
+          id: 2,
+          url: "/assets/images/admin-portal-img2.png",
+          alt: "Mountain landscape in autumn",
+          caption: "Explore the Great Outdoors",
+        },
+        {
+          id: 3,
+          url: "/assets/images/admin-portal-img3.png",
+          alt: "Mountain landscape in autumn",
+          caption: "Explore the Great Outdoors",
+        },
       ],
     },
     {
@@ -62,7 +83,27 @@ const Projects = () => {
           </p>
         </>
       ),
-      tech: ["Angular", "RxJS", "NG-ZORRO", "SCSS", "TypeScript", "Chartjs"],
+      tech: ["Angular", "RxJS", "NG-ZORRO", "TypeScript", "Chartjs"],
+      slides: [
+        {
+          id: 4,
+          url: "/assets/images/customer-portal-img1.png",
+          alt: "Customer Portal Feature Image",
+          caption: "Explore the Great Outdoors",
+        },
+        {
+          id: 5,
+          url: "/assets/images/customer-portal-img2.png",
+          alt: "Customer Portal Feature Image",
+          caption: "Explore the Great Outdoors",
+        },
+        {
+          id: 6,
+          url: "/assets/images/customer-portal-img3.png",
+          alt: "Customer Portal Feature Image",
+          caption: "Explore the Great Outdoors",
+        },
+      ],
     },
     {
       title: "Merchant App",
@@ -85,7 +126,35 @@ const Projects = () => {
           </p>
         </>
       ),
-      tech: ["Ionic", "Capacitor", "Angular", "Google Play", "Sunmi Hardware"],
+      tech: [
+        "Ionic",
+        "Capacitor",
+        "Angular",
+        "Typescript",
+        "SCSS",
+        "Google Play",
+        "Sunmi Hardware",
+      ],
+      slides: [
+        {
+          id: 7,
+          url: "/assets/images/mobile-app-img1.png",
+          alt: "Mobile App Feature Image",
+          caption: "Explore the Great Outdoors",
+        },
+        {
+          id: 8,
+          url: "/assets/images/mobile-app-img2.png",
+          alt: "Mobile App Feature Image",
+          caption: "Explore the Great Outdoors",
+        },
+        {
+          id: 9,
+          url: "/assets/images/mobile-app-img3.png",
+          alt: "Mobile App Feature Image",
+          caption: "Explore the Great Outdoors",
+        },
+      ],
     },
   ];
 
@@ -112,7 +181,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 gap-8"
         >
           {projects.map((project, index) => (
             <motion.div key={index} variants={fadeInLeft}>
@@ -125,6 +194,7 @@ const Projects = () => {
                 data={project.tech}
                 renderItemStyle="fill"
                 renderItem={(tech) => <Pill text={tech} />}
+                slides={project.slides}
               />
             </motion.div>
           ))}
