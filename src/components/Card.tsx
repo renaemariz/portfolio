@@ -7,7 +7,7 @@ type CardProps<T> = {
   cardBody?: string | React.ReactNode;
   data?: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
-  renderItemStyle?: "fill" | "auto";
+  renderItemStyle?: "fill" | "auto" | string;
 };
 
 const Card = <T,>({

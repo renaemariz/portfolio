@@ -13,7 +13,6 @@ export function useSectionObserver(): string {
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log(entry);
           updateState(entry.target.id);
         }
       });
@@ -25,10 +24,11 @@ export function useSectionObserver(): string {
         return id;
       });
     };
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     const observer = new IntersectionObserver(handleIntersect, {
-      rootMargin: "-40% 0px -40% 0px",
-      threshold: 0.1,
+      rootMargin: isMobile ? "-50% 0px -50% 0px" : "-40% 0px -40% 0px",
+      threshold: 0,
     });
 
     sections.forEach((section) => observer.observe(section));

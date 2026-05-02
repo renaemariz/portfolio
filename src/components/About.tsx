@@ -36,13 +36,13 @@ const About = () => {
       value: (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <p className="text-[10px] font-bold text-secondary uppercase tracking-tighter">
+            <p className="text-[10px] font-bold text-secondary uppercase">
               Enterprise Web
             </p>
             <p className="text-sm text-secondary">Administrative Dashboards</p>
           </div>
           <div>
-            <p className="text-[10px] font-bold text-secondary uppercase tracking-tighter">
+            <p className="text-[10px] font-bold text-secondary uppercase">
               Mobile App Fintech
             </p>
             <p className="text-sm text-secondary">

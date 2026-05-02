@@ -14,11 +14,12 @@ const Projects = () => {
         <>
           <p className="mt-1 mb-2">
             <strong>The Build: </strong> Architected a greenfield portal for
-            managing merchant configurations, reports and complex menu data.
+            managing merchant configurations, card management, reports and
+            complex menu data.
           </p>
           <p className="mt-1 mb-2">
             <strong>Custom UI: </strong>
-            Engineered a responsive, data-heavy interface using Tailwind CSS,
+            Engineered a responsive, data-heavy interface using Tanstack Table,
             prioritizing high-precision merchant modifications and
             administrative efficiency.
           </p>
@@ -32,7 +33,7 @@ const Projects = () => {
       tech: [
         "React",
         "Nextjs",
-        "TailwindCSS",
+        "Tanstack Table",
         "RTK Query",
         "Echarts",
         "Storybook",
@@ -61,7 +62,7 @@ const Projects = () => {
           </p>
         </>
       ),
-      tech: ["Angular", "RxJS", "Ant Design", "SCSS", "TypeScript", "Chartjs"],
+      tech: ["Angular", "RxJS", "NG-ZORRO", "SCSS", "TypeScript", "Chartjs"],
     },
     {
       title: "Merchant App",
@@ -71,7 +72,7 @@ const Projects = () => {
           <p className="mt-1 mb-2">
             <strong>The Build: </strong> Developed an App for Android and Sunmi
             POS hardware, enabling merchants or agents to facilitate mobile
-            top-ups, SandDollar digital payments, and utility transactions.
+            top-ups, QR scanning, utility and other transactions.
           </p>
           <p className="mt-1 mb-2">
             <strong>API Integration: </strong>
