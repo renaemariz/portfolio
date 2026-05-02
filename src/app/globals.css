@@ -137,11 +137,11 @@ section {
   display: flex;
   height: 100%;
   position: relative;
+  min-height: 200px;
 }
 
 .embla__slide {
   flex: 0 0 100%;
-  min-width: 0;
   height: 100%;
   position: relative;
 }
