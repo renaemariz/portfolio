@@ -8,25 +8,25 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experiences = [
     {
-      date: "2024 — Present",
+      date: "2024 — 2026",
       company: "Xentra Infotech Solutions Inc",
       role: "Senior Frontend Developer",
       description: (
         <>
           <ul className="list-disc pl-5 marker:text-indigo-300">
             <li>
-              Architected a suite of greenfield portals (Admin/Merchant) from
-              inception, defining a scalable tech stack using Next.js and RTK
-              Query to optimize complex data-fetching and state management.
+              Architected scalable frontend solutions for Admin and Merchant
+              portals using Next.js and RTK Query, optimizing complex
+              data-fetching layers to handle heavy data flows efficiently.
             </li>
             <li>
-              Standardized UI/UX quality by documenting complex interaction
-              patterns in Storybook, accelerating development cycles and
-              ensuring cross-team architectural alignment.
+              Designed interactive data dashboards using Chart.js/Recharts and
+              established UI governance via Storybook, accelerating cross-team
+              feature delivery while maintaining strict architectural alignment.
             </li>
             <li>
               Managed end-to-end deployment utilizing AWS S3 for web hosting and
-              overseen successful releases to the App Store and Google Play.
+              oversaw successful releases to the App Store and Google Play.
             </li>
           </ul>
         </>
@@ -41,14 +41,15 @@ const Experience = () => {
         <>
           <ul className="list-disc pl-5 marker:text-indigo-300">
             <li>
-              Created pages and functionality using Ionic to deliver standalone
-              applications with a shared codebase, ensuring 100% cross-platform
-              consistency.
+              Engineered white-label rebranding strategies and feature updates
+              for customer portals using Angular, refactoring legacy modules to
+              ensure data accuracy and long-term system stability.
             </li>
             <li>
-              Rebranded, maintained, and updated customer portals using Angular,
-              engineering feature updates that prioritized data accuracy and
-              long-term system stability.
+              Developed cross-platform web and mobile applications leveraging
+              Ionic and Angular Frameworks to deliver standalone apps from a
+              single, shared codebase, maximizing engineering efficiency and
+              ensuring 100% UI consistency.
             </li>
           </ul>
         </>
@@ -67,8 +68,8 @@ const Experience = () => {
               Ionic, optimizing performance and expanding core feature sets.
             </li>
             <li>
-              Created test plans and executed testing for enhancements and fixes
-              on applications.
+              Created test plans and tested for enhancements and fixes on
+              applications.
             </li>
             <li>
               Developed interactive promotional games and Augmented Reality (AR)
